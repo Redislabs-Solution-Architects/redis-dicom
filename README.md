@@ -67,3 +67,21 @@ FAST LOCALIZER: 4
 Whole Body Bone: 4
 194: 1
 ```
+
+## Speed Test <a name="speedtest"></a>
+There is a Python asyncio app included for allowing scaled file retrievals.  The application allows for configuration of chunk sizes and number of Redis client connections.
+### Example
+```bash
+python3 svs_speed_test.py --chunk_size 30 --connections 1000
+
+*** File Retrieval Test - 30 KB Chunks, 1000 Client Connections ***
+test.svs Size: 1579.72 MB
+Files loaded: 1
+
+Key: file:test.svs
+Exec time: 7924.45 ms
+Bytes Retrieved: 1656460030
+File integrity check:  Pass
+
+Total time: 7924.45 ms
+```
