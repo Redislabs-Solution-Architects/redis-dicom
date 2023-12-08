@@ -9,10 +9,9 @@ services:
     cap_add: 
       - sys_resource
     ports:
-      - "18443:8443"
+      - "8443:8443"
       - "12000:12000"
-      - "13000:13000"
-      - "19443:9443"
+      - "9443:9443"
     networks:
       app_net:
         ipv4_address: 192.168.20.2
@@ -25,11 +24,6 @@ services:
     tty: true
     cap_add: 
       - sys_resource
-    ports:
-      - "18444:8443"
-      - "12001:12000"
-      - "13001:13000"
-      - "19444:9443"
     networks:
       app_net:
         ipv4_address: 192.168.20.3
@@ -42,11 +36,6 @@ services:
     tty: true
     cap_add: 
       - sys_resource
-    ports:
-      - "18445:8443"
-      - "12002:12000"
-      - "13002:13000"
-      - "19445:9443"
     networks:
       app_net:
         ipv4_address: 192.168.20.4

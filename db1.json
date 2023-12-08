@@ -1,7 +1,7 @@
 {
     "name": "db1",
     "type": "redis",
-    "memory_size": 100000000,
+    "memory_size": 5000000000,
     "port": 12000,
     "authentication_redis_pass": "redis",
     "proxy_policy": "all-master-shards",
