@@ -10,6 +10,7 @@
 7.  [Scenario 1](#scenario1)
 8.  [Scenario 2](#scenario2)
 9.  [Scenario 3](#scenario3)
+10. [Speed Test](#speedtest)
 
 ## Summary <a name="summary"></a>
 This is a Jupyter notebook that loads a DICOM data set into Redis.  A JSON object is used to hold DICOM meta data and array of keys for strings holding byte chunks of the DICOM file.  Those JSON objects can subsequently be indexed and searched against the DICOM meta data. The DICOM byte chunks are stored as Redis strings. 
