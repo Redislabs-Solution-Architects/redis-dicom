@@ -76,7 +76,7 @@ I ran this app in a VM on Google Cloud in the same region as a Redis Cloud Flexi
 
 #### Sample Command and Results
 ```bash
-python3 svs_speed_test.py --url=redis://default:<pwd>@redis-12187.internal.c28671.us-west1-mz.gcp.cloud.rlrcp.com:12187 --chunk_size=64 --connections=1
+python3 svs_speed_test.py --url=redis://default:<pwd>@<redis-uri> --chunk_size=64 --connections=1
 ```
 
 ```text
