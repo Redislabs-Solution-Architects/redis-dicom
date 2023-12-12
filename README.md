@@ -71,18 +71,97 @@ Whole Body Bone: 4
 
 ## Speed Test <a name="speedtest"></a>
 There is a Python asyncio app included for allowing scaled file retrievals.  The application allows for configuration of chunk sizes and number of Redis client connections.
-### Example
-```bash
-python3 svs_speed_test.py --chunk_size 30 --connections 1000
+### Sample Results
+I ran this app in a VM on Google Cloud in the same region as a Redis Cloud Flexible cluster.  Below are some results.  I set up VPC peering between the app VM and the Redis instance.  Network latency was ~.3ms.
 
-*** File Retrieval Test - 30 KB Chunks, 1000 Client Connections ***
+#### Sample Command and Results
+```bash
+python3 svs_speed_test.py --url=redis://default:<pwd>@redis-12187.internal.c28671.us-west1-mz.gcp.cloud.rlrcp.com:12187 --chunk_size=64 --connections=1
+```
+
+```text
+*** File Retrieval Test - 64 KB Chunks, 1 Client Connections ***
 test.svs Size: 1579.72 MB
 Files loaded: 1
 
 Key: file:test.svs
-Exec time: 7924.45 ms
+Exec time: 16794.48 ms
 Bytes Retrieved: 1656460030
 File integrity check:  Pass
+```
 
-Total time: 7924.45 ms
+```text
+*** File Retrieval Test - 64 KB Chunks, 5 Client Connections ***
+test.svs Size: 1579.72 MB
+Files loaded: 1
+
+Key: file:test.svs
+Exec time: 6996.46 ms
+Bytes Retrieved: 1656460030
+File integrity check:  Pass
+```
+
+```text
+*** File Retrieval Test - 64 KB Chunks, 10 Client Connections ***
+test.svs Size: 1579.72 MB
+Files loaded: 1
+
+Key: file:test.svs
+Exec time: 5411.64 ms
+Bytes Retrieved: 1656460030
+File integrity check:  Pass
+```
+```text
+*** File Retrieval Test - 64 KB Chunks, 20 Client Connections ***
+test.svs Size: 1579.72 MB
+Files loaded: 1
+
+Key: file:test.svs
+Exec time: 4655.77 ms
+Bytes Retrieved: 1656460030
+File integrity check:  Pass
+```
+
+```text
+*** File Retrieval Test - 64 KB Chunks, 50 Client Connections ***
+test.svs Size: 1579.72 MB
+Files loaded: 1
+
+Key: file:test.svs
+Exec time: 4091.87 ms
+Bytes Retrieved: 1656460030
+File integrity check:  Pass
+```
+
+```text
+*** File Retrieval Test - 128 KB Chunks, 50 Client Connections ***
+test.svs Size: 1579.72 MB
+Files loaded: 1
+
+Key: file:test.svs
+Exec time: 3738.14 ms
+Bytes Retrieved: 1656460030
+File integrity check:  Pass
+```
+
+```text
+*** File Retrieval Test - 256 KB Chunks, 50 Client Connections ***
+test.svs Size: 1579.72 MB
+Files loaded: 1
+
+Key: file:test.svs
+Exec time: 3703.09 ms
+Bytes Retrieved: 1656460030
+File integrity check:  Pass
+```
+
+```text
+*** File Retrieval Test - 512 KB Chunks, 50 Client Connections ***
+test.svs Size: 1579.72 MB
+Files loaded: 1
+
+Key: file:test.svs
+Exec time: 3566.06 ms
+Bytes Retrieved: 1656460030
+File integrity check:  Pass
 ```
